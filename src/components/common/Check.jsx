@@ -3,15 +3,15 @@ const Check = (props) => {
   const { id, complete, onComplete } = props;
   const [checked, setChecked] = useState(complete);
 
-  const handleCompleteItem = (e, id, completeCheck) => {
+  const handleCompleteItem = (e, id) => {
     setChecked(e.target.checked);
-    onComplete(id, checked, completeCheck);
+    onComplete(id, e.target.checked);
   };
   return (
     <input
       type="checkbox"
-      checked={checked}
-      onChange={(e) => handleCompleteItem(e, id, checked)}
+      defaultChecked={checked}
+      onChange={(e) => handleCompleteItem(e, id)}
     />
   );
 };

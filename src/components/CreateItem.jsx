@@ -13,7 +13,7 @@ const CreateItem = (props) => {
     const newItem = {
       id: id,
       content: item,
-      completed: true,
+      completed: false,
       orderId: 1,
     };
     onNewItem(newItem);

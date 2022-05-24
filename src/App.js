@@ -19,7 +19,14 @@ function App() {
   };
 
   const handleCompleteItem = (item, state) => {
-    console.log("handleCompleteItem" + item + " is " + state);
+    const updateItem = items.map((i) => {
+      if (i.id === item) {
+        return { ...i, completed: state };
+      } else {
+        return i;
+      }
+    });
+    setItems(updateItem);
   };
 
   return (
