@@ -2,11 +2,12 @@ import "./App.css";
 import Items from "./components/Items";
 import CreateItem from "./components/CreateItem";
 import Filter from "./components/Filter";
-import React from "react";
+import React, { useState } from "react";
 import { useLocalStorage } from "./utils/localStorage";
 
 function App() {
   const [items, setItems] = useLocalStorage("items", "");
+  const [filter, setFilter] = useState("");
 
   const handleNewItem = (item) => {
     setItems([...items, item]);
@@ -28,13 +29,11 @@ function App() {
     });
     setItems(updateItem);
   };
-  // TODO:
-  const handleFilter = (filterResult) => {
-    console.log(filterResult);
-    //itemFilter = filterResult;
-    return filterResult;
+
+  const clearCompleted = () => {
+    setItems(items.filter((item) => !item.completed));
   };
-  // TODO:
+
   return (
     <React.Fragment>
       <CreateItem data={items} onNewItem={handleNewItem} />
@@ -45,10 +44,14 @@ function App() {
           onDelete={handleDeleteItem}
           onComplete={handleCompleteItem}
           data={items}
-          filter={handleFilter}
+          filter={filter}
         />
       )}
-      <Filter data={items} onFilter={handleFilter} />
+      <Filter
+        data={items}
+        onFilter={setFilter}
+        onClearComplete={clearCompleted}
+      />
     </React.Fragment>
   );
 }

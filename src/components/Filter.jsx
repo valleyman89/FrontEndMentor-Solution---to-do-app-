@@ -1,35 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Filter = (props) => {
-  const { onFilter } = props;
+  const { onFilter, onClearComplete } = props;
 
-  function filterItems(type) {
-    let result = null;
-    switch (type) {
-      case "active":
-        result = (r) => r.completed;
-        onFilter(result);
-        break;
-      case "completed":
-        result = (r) => !r.completed;
-        onFilter(result);
-        break;
-      // case "clear":
-      //   result = data.filter((r) => !r.completed);
-      //   onFilter(result);
-      default:
-        result = (r) => r;
-        onFilter(result);
-        break;
-    }
-  }
   return (
     <div>
       Filter:
-      <button onClick={() => filterItems()}>All</button>
-      <button onClick={() => filterItems("active")}>Active</button>
-      <button onClick={() => filterItems("completed")}>Completed</button>
-      <button onClick={() => filterItems("clear")}>Clear</button>
+      <button onClick={() => onFilter("")}>All</button>
+      <button onClick={() => onFilter("active")}>Active</button>
+      <button onClick={() => onFilter("completed")}>Completed</button>
+      <button onClick={() => onClearComplete()}>Clear</button>
     </div>
   );
 };

@@ -1,20 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import Item from "./Item";
 
 const Items = (props) => {
   const { data, onDelete, onComplete, filter } = props;
-  console.log("filter:\n", filter);
+
   return (
     <div>
-      {data.filter(filter).map((item) => {
-        return (
-          <div key={item.id}>
-            <ul>
-              <Item data={item} onDelete={onDelete} onComplete={onComplete} />
-            </ul>
-          </div>
-        );
-      })}
+      {data
+        .filter((item) => {
+          switch (filter) {
+            case "active":
+              return !item.completed;
+              break;
+            case "completed":
+              return item.completed;
+              break;
+            default:
+              return item;
+          }
+        })
+        .map((item) => {
+          return (
+            <div key={item.id}>
+              <ul>
+                <Item data={item} onDelete={onDelete} onComplete={onComplete} />
+              </ul>
+            </div>
+          );
+        })}
     </div>
   );
 };
