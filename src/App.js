@@ -2,7 +2,7 @@ import "./App.css";
 import Items from "./components/Items";
 import CreateItem from "./components/CreateItem";
 import Filter from "./components/Filter";
-import React, { useState } from "react";
+import React from "react";
 import { useLocalStorage } from "./utils/localStorage";
 
 function App() {
@@ -28,7 +28,13 @@ function App() {
     });
     setItems(updateItem);
   };
-
+  // TODO:
+  const handleFilter = (filterResult) => {
+    console.log(filterResult);
+    //itemFilter = filterResult;
+    return filterResult;
+  };
+  // TODO:
   return (
     <React.Fragment>
       <CreateItem data={items} onNewItem={handleNewItem} />
@@ -39,9 +45,10 @@ function App() {
           onDelete={handleDeleteItem}
           onComplete={handleCompleteItem}
           data={items}
+          filter={handleFilter}
         />
       )}
-      <Filter />
+      <Filter data={items} onFilter={handleFilter} />
     </React.Fragment>
   );
 }

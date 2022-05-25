@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Item from "./Item";
 
 const Items = (props) => {
-  const { data, onDelete, onComplete } = props;
+  const { data, onDelete, onComplete, filter } = props;
+  console.log("filter:\n", filter);
   return (
     <div>
-      {data.map((item) => {
+      {data.filter(filter).map((item) => {
         return (
           <div key={item.id}>
             <ul>
