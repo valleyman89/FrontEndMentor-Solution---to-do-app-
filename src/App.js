@@ -3,10 +3,10 @@ import Items from "./components/Items";
 import CreateItem from "./components/CreateItem";
 import Filter from "./components/Filter";
 import React, { useState } from "react";
-import { useLocalStorage } from "./utils/localStorage";
+import { useItemContext } from "./ItemsContext";
 
 function App() {
-  const [items, setItems] = useLocalStorage("items", "");
+  const {items, setItems} = useItemContext()
   const [filter, setFilter] = useState("");
 
   const handleNewItem = (item) => {
@@ -30,10 +30,6 @@ function App() {
     setItems(updateItem);
   };
 
-  const clearCompleted = () => {
-    setItems(items.filter((item) => !item.completed));
-  };
-
   return (
     <React.Fragment>
       <CreateItem data={items} onNewItem={handleNewItem} />
@@ -50,7 +46,6 @@ function App() {
       <Filter
         data={items}
         onFilter={setFilter}
-        onClearComplete={clearCompleted}
       />
     </React.Fragment>
   );

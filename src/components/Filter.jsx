@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useItemContext } from "../ItemsContext";
 
 const Filter = (props) => {
-  const { onFilter, onClearComplete } = props;
+  const { onFilter } = props;
+  const { setItems, items } = useItemContext();
+
+  const clearCompleted = () => {
+    setItems(items.filter((item) => !item.completed));
+  };
 
   return (
     <div>
@@ -9,7 +15,7 @@ const Filter = (props) => {
       <button onClick={() => onFilter("")}>All</button>
       <button onClick={() => onFilter("active")}>Active</button>
       <button onClick={() => onFilter("completed")}>Completed</button>
-      <button onClick={() => onClearComplete()}>Clear</button>
+      <button onClick={() => clearCompleted()}>Clear</button>
     </div>
   );
 };
