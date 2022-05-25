@@ -35,24 +35,21 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <div className="container">
       <CreateItem data={items} onNewItem={handleNewItem} />
       {items.length < 1 ? (
-        "nothing here"
+        <div className="items item shadow">Empty...</div>
       ) : (
         <Items
           onDelete={handleDeleteItem}
           onComplete={handleCompleteItem}
+          onClearComplete={clearCompleted}
           data={items}
           filter={filter}
         />
       )}
-      <Filter
-        data={items}
-        onFilter={setFilter}
-        onClearComplete={clearCompleted}
-      />
-    </React.Fragment>
+      <Filter data={items} onFilter={setFilter} />
+    </div>
   );
 }
 

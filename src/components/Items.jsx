@@ -2,10 +2,10 @@ import React from "react";
 import Item from "./Item";
 
 const Items = (props) => {
-  const { data, onDelete, onComplete, filter } = props;
+  const { data, onDelete, onComplete, onClearComplete, filter } = props;
 
   return (
-    <div>
+    <div className="items shadow">
       {data
         .filter((item) => {
           switch (filter) {
@@ -22,12 +22,19 @@ const Items = (props) => {
         .map((item) => {
           return (
             <div key={item.id}>
-              <ul>
-                <Item data={item} onDelete={onDelete} onComplete={onComplete} />
-              </ul>
+              <Item data={item} onDelete={onDelete} onComplete={onComplete} />
             </div>
           );
         })}
+      <div className="end">
+        {
+          data.filter((e) => {
+            return !e.completed;
+          }).length
+        }{" "}
+        items left
+        <button onClick={() => onClearComplete()}>Clear Completed</button>
+      </div>
     </div>
   );
 };

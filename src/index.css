@@ -1,13 +1,154 @@
+/* Import */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+/* Custom Properties */
+:root {
+  /* primary */
+  --color-bright-blue: hsl(220, 98%, 61%);
+
+  /* light theme */
+  --color-very-light-grey: hsl(0, 0%, 98%);
+  --color-very-light-greyish-blue: hsl(236, 33%, 92%);
+  --color-light-greyish-blue: hsl(233, 11%, 84%);
+  --color-dark-greyish-blue: hsl(236, 9%, 61%);
+  --color-very-dark-greyish-blue: hsl(235, 19%, 35%);
+
+  /* dark theme */
+  --color-very-dark-blue: hsl(235, 21%, 11%);
+  --color-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --color-light-greyish-blue: hsl(234, 39%, 85%);
+  --color-dark-grayish-blue: hsl(234, 11%, 52%);
+  --color-very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --color-very-dark-grayish-blue: hsl(237, 14%, 26%);
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+/* Typography */
+html {
+  font-size: 62.5%;
+}
 body {
+  background-color: var(--color-very-light-grey);
+  background-image: url(../public/images/bg-mobile-light.jpg);
+  background-repeat: repeat-x;
+  background-size: 100% auto;
+  color: var(--color-very-dark-blue);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  word-spacing: 2px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Container */
+.container {
+  margin: 1rem;
+}
+
+/* box shadow */
+.shadow {
+  box-shadow: 0 1.6rem 1.6rem 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Create Item */
+.create-item {
+  background-color: white;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  height: 5rem;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.create-item input {
+  all: unset;
+  color: var(--color-dark-greyish-blue);
+  font-family: inherit;
+  font-size: inherit;
+  height: min-content;
+  width: 100%;
+}
+
+/* Items */
+.items {
+  background-color: white;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  height: fit-content;
+  padding: 1rem 0;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+button {
+  all: unset;
+}
+
+/* item */
+.item {
+  align-items: center;
+  border-bottom: 0.2rem solid var(--color-very-light-grey);
+  color: var(--color-dark-greyish-blue);
+  display: grid;
+  font-weight: 400;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  grid-template-rows: 1fr;
+  height: 5rem;
+  justify-items: center;
+  padding: 0 2rem;
+}
+
+.div1 {
+  justify-self: start;
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2 {
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: start;
+}
+.div3 {
+  justify-self: end;
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+/* Check #57ddff to #c058f3 */
+
+/* End Row */
+.end {
+  color: var(--color-dark-grayish-blue);
+  padding: 1.5rem 2rem 0 2rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+  font-weight: 700;
+}
+.end button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-align: center;
+}
+/* Filter */
+.filter {
+  background-color: white;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.filter button {
+  cursor: pointer;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
 }

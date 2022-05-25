@@ -9,27 +9,33 @@ const CreateItem = (props) => {
     e.preventDefault();
 
     setId((prev) => prev + 1);
-
-    const newItem = {
-      id: id,
-      content: item,
-      completed: false,
-      orderId: 1,
-    };
-    onNewItem(newItem);
-    setItem("");
+    if (item.length < 1) {
+      return;
+    } else {
+      const newItem = {
+        id: id,
+        content: item,
+        completed: false,
+        orderId: 1,
+      };
+      onNewItem(newItem);
+      setItem("");
+    }
   };
 
   return (
     <form onSubmit={handleOnSubmit}>
-      <input
-        type="text"
-        name="newItemInput"
-        value={item}
-        onChange={(e) => setItem(e.target.value)}
-        placeholder="Create a new todo..."
-        aria-label="newtask"
-      />
+      <div className="create-item shadow">
+        <input
+          type="text"
+          name="newItemInput"
+          value={item}
+          onChange={(e) => setItem(e.target.value)}
+          placeholder="Create a new todo..."
+          aria-label="newtask"
+          maxLength="50"
+        />
+      </div>
     </form>
   );
 };

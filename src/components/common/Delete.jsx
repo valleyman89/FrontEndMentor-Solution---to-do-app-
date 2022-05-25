@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ReactComponent as DeleteIcon } from "../../svg/icon-cross.svg";
 
 const Delete = (props) => {
   const { id, onDelete } = props;
@@ -14,7 +15,7 @@ const Delete = (props) => {
         handleDeleteItem(id);
       }}
     >
-      x
+      <DeleteIcon />
     </button>
   );
 };
