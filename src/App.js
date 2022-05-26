@@ -15,16 +15,16 @@ function App() {
 
   const handleDeleteItem = (id) => {
     const ogItems = items;
-    const newItems = ogItems.filter((c) => c.id !== id);
+    const newItems = ogItems.filter((item) => item.id !== id);
     setItems(newItems);
   };
 
   const handleCompleteItem = (item, state) => {
-    const updateItem = items.map((i) => {
-      if (i.id === item) {
-        return { ...i, completed: state };
+    const updateItem = items.map((item) => {
+      if (item.id === item) {
+        return { ...item, completed: state };
       } else {
-        return i;
+        return item;
       }
     });
     setItems(updateItem);
