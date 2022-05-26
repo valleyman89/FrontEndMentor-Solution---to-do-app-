@@ -9,7 +9,9 @@ const Item = (props) => {
       <div className="item-complete">
         <Check id={data.id} complete={data.completed} onComplete={onComplete} />
       </div>
-      <div className="item-content"> {data.content}</div>
+      <div className="item-content">
+        <span className={data.completed ? "strike" : ""}>{data.content}</span>
+      </div>
       <div className="item-delete">
         <Delete id={data.id} onDelete={onDelete} />
       </div>

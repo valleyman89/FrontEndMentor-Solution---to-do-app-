@@ -149,6 +149,10 @@ button {
   grid-area: 1 / 3 / 2 / 4;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 /* Check #57ddff to #c058f3 */
 .check {
   width: 2rem;
