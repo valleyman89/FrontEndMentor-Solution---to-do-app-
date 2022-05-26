@@ -14,14 +14,12 @@ function App() {
   };
 
   const handleDeleteItem = (id) => {
-    const ogItems = items;
-    const newItems = ogItems.filter((item) => item.id !== id);
-    setItems(newItems);
+    setItems(items.filter((item) => item.id !== id));
   };
 
-  const handleCompleteItem = (item, state) => {
+  const handleCompleteItem = (itemId, state) => {
     const updateItem = items.map((item) => {
-      if (item.id === item) {
+      if (item.id === itemId) {
         return { ...item, completed: state };
       } else {
         return item;
