@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Filter = (props) => {
-  const { onFilter, onClearComplete } = props;
+  const { onFilter } = props;
 
   return (
     <div className="filter shadow">

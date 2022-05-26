@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ReactComponent as CheckIcon } from "../../svg/icon-check.svg";
 const Check = (props) => {
   const { id, complete, onComplete } = props;
   const [checked, setChecked] = useState(complete);
@@ -9,12 +8,16 @@ const Check = (props) => {
     onComplete(id, e.target.checked);
   };
   return (
-    <input
-      className="check"
-      type="checkbox"
-      defaultChecked={checked}
-      onChange={(e) => handleCompleteItem(e, id)}
-    />
+    <React.Fragment>
+      <input
+        className="check"
+        type="checkbox"
+        defaultChecked={checked}
+        onChange={(e) => handleCompleteItem(e, id)}
+        name={id}
+      />
+      <label htmlFor={id}></label>
+    </React.Fragment>
   );
 };
 
