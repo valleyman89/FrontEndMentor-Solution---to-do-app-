@@ -44,9 +44,38 @@ body {
   word-spacing: 2px;
 }
 
+@media screen and (min-width: 1119px) {
+  body {
+    background-image: url(../public/images/bg-desktop-light.jpg);
+    background-repeat: repeat-x;
+    background-size: 100% auto;
+  }
+}
+
 /* Container */
 .container {
   margin: 1rem;
+}
+
+@media screen and (min-width: 1119px) {
+  .container {
+    margin: auto;
+    width: 33vw;
+  }
+}
+
+/* header */
+h1 {
+  letter-spacing: 5px;
+  color: var(--color-very-light-grey);
+  margin: 2rem;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 1119px) {
+  h1 {
+    margin: 2rem auto;
+    width: 33vw;
+  }
 }
 
 /* box shadow */
@@ -63,7 +92,7 @@ body {
   width: 100%;
   padding: 2rem;
   font-size: 1.7rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 .create-item input {
   all: unset;
@@ -106,21 +135,41 @@ button {
   padding: 0 2rem;
 }
 
-.div1 {
+.item-complete {
   justify-self: start;
   grid-area: 1 / 1 / 2 / 2;
 }
-.div2 {
+.item-content {
   grid-area: 1 / 2 / 2 / 3;
+  padding-left: 2rem;
   justify-self: start;
 }
-.div3 {
+.item-delete {
   justify-self: end;
   grid-area: 1 / 3 / 2 / 4;
 }
 
 /* Check #57ddff to #c058f3 */
-
+.check {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-dark-greyish-blue);
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.check:checked {
+  border: none;
+  background: rgb(87, 221, 255);
+  background-image: url(../src/svg/icon-check.svg),
+    linear-gradient(
+      165deg,
+      rgba(87, 221, 255, 1) 0%,
+      rgba(192, 88, 243, 1) 100%
+    );
+  background-repeat: no-repeat;
+  background-position: center;
+}
 /* End Row */
 .end {
   color: var(--color-dark-grayish-blue);
@@ -129,7 +178,19 @@ button {
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr;
   font-weight: 700;
+  justify-items: stretch;
 }
+
+.end-items {
+  grid-area: 1 / 1;
+  justify-self: start;
+}
+
+.end-clear {
+  grid-area: 1 / 2;
+  justify-self: end;
+}
+
 .end button {
   cursor: pointer;
   font-size: 1.5rem;
@@ -151,4 +212,12 @@ button {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
+}
+
+.filter button:hover {
+  color: var(--color-bright-blue);
+}
+
+.filter button:active {
+  color: var(--color-bright-blue);
 }
