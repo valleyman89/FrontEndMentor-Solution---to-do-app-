@@ -27,13 +27,17 @@ const Items = (props) => {
           );
         })}
       <div className="end">
-        {
-          data.filter((e) => {
-            return !e.completed;
-          }).length
-        }{" "}
-        items left
-        <button onClick={() => onClearComplete()}>Clear Completed</button>
+        <div className="end-items">
+          {
+            data.filter((item) => {
+              return !item.completed;
+            }).length
+          }{" "}
+          items left
+        </div>
+        <div className="end-clear">
+          <button onClick={() => onClearComplete()}>Clear Completed</button>
+        </div>
       </div>
     </div>
   );

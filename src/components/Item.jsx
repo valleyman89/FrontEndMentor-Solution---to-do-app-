@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Check from "./common/Check";
 import Delete from "./common/Delete";
 
@@ -6,11 +6,11 @@ const Item = (props) => {
   const { data, onDelete, onComplete } = props;
   return (
     <div className="item">
-      <div className="div1">
+      <div className="item-complete">
         <Check id={data.id} complete={data.completed} onComplete={onComplete} />
       </div>
-      <div className="div2"> {data.content}</div>
-      <div className="div3">
+      <div className="item-content"> {data.content}</div>
+      <div className="item-delete">
         <Delete id={data.id} onDelete={onDelete} />
       </div>
     </div>
