@@ -65,18 +65,24 @@ body {
 }
 
 /* header */
+.header {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+}
+
 h1 {
+  margin: 0;
   letter-spacing: 5px;
   color: var(--color-very-light-grey);
-  margin: 2rem;
   text-transform: uppercase;
 }
-@media screen and (min-width: 1119px) {
+/* @media screen and (min-width: 1119px) {
   h1 {
-    margin: 2rem auto;
     width: 33vw;
   }
-}
+} */
 
 /* box shadow */
 .shadow {

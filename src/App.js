@@ -1,9 +1,9 @@
-import "./App.css";
-import Items from "./components/Items";
+import { useItemContext } from "./ItemsContext";
 import CreateItem from "./components/CreateItem";
 import Filter from "./components/Filter";
+import Header from "./components/Header";
+import Items from "./components/Items";
 import React, { useState } from "react";
-import { useItemContext } from "./ItemsContext";
 
 function App() {
   const { items, setItems } = useItemContext();
@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="container">
+      <Header />
       <CreateItem />
       {items.length < 1 ? (
         <div className="items item shadow">Empty...</div>
