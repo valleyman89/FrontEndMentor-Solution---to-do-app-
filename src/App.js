@@ -3,50 +3,21 @@ import Items from "./components/Items";
 import CreateItem from "./components/CreateItem";
 import Filter from "./components/Filter";
 import React, { useState } from "react";
-import { useLocalStorage } from "./utils/localStorage";
+import { useItemContext } from "./ItemsContext";
 
 function App() {
-  const [items, setItems] = useLocalStorage("items", "");
+  const { items, setItems } = useItemContext();
   const [filter, setFilter] = useState("");
-
-  const handleNewItem = (item) => {
-    setItems([...items, item]);
-  };
-
-  const handleDeleteItem = (id) => {
-    setItems(items.filter((item) => item.id !== id));
-  };
-
-  const handleCompleteItem = (itemId, state) => {
-    const updateItem = items.map((item) => {
-      if (item.id === itemId) {
-        return { ...item, completed: state };
-      } else {
-        return item;
-      }
-    });
-    setItems(updateItem);
-  };
-
-  const clearCompleted = () => {
-    setItems(items.filter((item) => !item.completed));
-  };
 
   return (
     <div className="container">
-      <CreateItem data={items} onNewItem={handleNewItem} />
+      <CreateItem />
       {items.length < 1 ? (
         <div className="items item shadow">Empty...</div>
       ) : (
-        <Items
-          onDelete={handleDeleteItem}
-          onComplete={handleCompleteItem}
-          onClearComplete={clearCompleted}
-          data={items}
-          filter={filter}
-        />
+        <Items filter={filter} />
       )}
-      <Filter data={items} onFilter={setFilter} />
+      <Filter onFilter={setFilter} />
     </div>
   );
 }

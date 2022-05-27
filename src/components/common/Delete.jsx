@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as DeleteIcon } from "../../svg/icon-cross.svg";
+import { useItemContext } from "../../ItemsContext";
 
 const Delete = (props) => {
-  const { id, onDelete } = props;
+  const { id } = props;
+  const { setItems, items } = useItemContext();
 
   const handleDeleteItem = (id) => {
-    onDelete(id);
+    setItems(items.filter((item) => item.id !== id));
   };
 
   return (

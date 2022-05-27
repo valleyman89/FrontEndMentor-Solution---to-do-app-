@@ -1,12 +1,19 @@
 import React from "react";
 import Item from "./Item";
+import { useItemContext } from "../ItemsContext";
 
 const Items = (props) => {
-  const { data, onDelete, onComplete, onClearComplete, filter } = props;
+  const { setItems, items } = useItemContext();
+
+  const { filter } = props;
+
+  const onClearComplete = () => {
+    setItems(items.filter((item) => !item.completed));
+  };
 
   return (
     <div className="items shadow">
-      {data
+      {items
         .filter((item) => {
           switch (filter) {
             case "active":
@@ -22,18 +29,24 @@ const Items = (props) => {
         .map((item) => {
           return (
             <div key={item.id}>
-              <Item data={item} onDelete={onDelete} onComplete={onComplete} />
+              <Item data={item} />
             </div>
           );
         })}
       <div className="end">
         <div className="end-items">
           {
-            data.filter((item) => {
+            items.filter((item) => {
               return !item.completed;
             }).length
           }{" "}
-          items left
+          item
+          {items.filter((item) => {
+            return !item.completed;
+          }).length === 1
+            ? ""
+            : "s"}{" "}
+          left
         </div>
         <div className="end-clear">
           <button onClick={() => onClearComplete()}>Clear Completed</button>

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import { useItemContext } from "../ItemsContext";
 
-const CreateItem = (props) => {
-  const { data, onNewItem } = props;
+const CreateItem = () => {
+  const { setItems, items } = useItemContext();
+
   const [item, setItem] = useState("");
-  const [id, setId] = useState(data.length + 1);
+  const [id, setId] = useState(items.length + 1);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
     setId((prev) => prev + 1);
+
     if (item.length < 1) {
       return;
     } else {
@@ -18,7 +21,7 @@ const CreateItem = (props) => {
         completed: false,
         orderId: 1,
       };
-      onNewItem(newItem);
+      setItems([...items, newItem]);
       setItem("");
     }
   };
