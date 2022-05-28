@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/FrontEndMentor-Solution---to-do-app-/static/css/main.0d03f366.css",
-    "main.js": "/FrontEndMentor-Solution---to-do-app-/static/js/main.43f745cd.js",
+    "main.js": "/FrontEndMentor-Solution---to-do-app-/static/js/main.669910fd.js",
     "static/js/787.5e141d9e.chunk.js": "/FrontEndMentor-Solution---to-do-app-/static/js/787.5e141d9e.chunk.js",
     "static/media/bg-desktop-light.jpg": "/FrontEndMentor-Solution---to-do-app-/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
     "index.html": "/FrontEndMentor-Solution---to-do-app-/index.html",
@@ -10,11 +10,11 @@
     "static/media/icon-cross.svg": "/FrontEndMentor-Solution---to-do-app-/static/media/icon-cross.6ee81d30b75cab19d6f7314624fcc4d6.svg",
     "static/media/icon-check.svg": "/FrontEndMentor-Solution---to-do-app-/static/media/icon-check.a8fb15d0278c8e312df5.svg",
     "main.0d03f366.css.map": "/FrontEndMentor-Solution---to-do-app-/static/css/main.0d03f366.css.map",
-    "main.43f745cd.js.map": "/FrontEndMentor-Solution---to-do-app-/static/js/main.43f745cd.js.map",
+    "main.669910fd.js.map": "/FrontEndMentor-Solution---to-do-app-/static/js/main.669910fd.js.map",
     "787.5e141d9e.chunk.js.map": "/FrontEndMentor-Solution---to-do-app-/static/js/787.5e141d9e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d03f366.css",
-    "static/js/main.43f745cd.js"
+    "static/js/main.669910fd.js"
   ]
 }
