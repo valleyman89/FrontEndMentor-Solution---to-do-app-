@@ -6,8 +6,8 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Notes](#notes)
@@ -33,15 +33,15 @@ Users should be able to:
 - Toggle light and dark mode ❌
 - **Bonus**: Drag and drop to reorder items on the list ❌
 
+### Links
+
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [https://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-](https://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-)
+
 ### Screenshot
 
 ![](./screenshot.png)
 ![](./screenshot-mobile.png)
-
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-](hthttps://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-)
 
 ## My process
 
