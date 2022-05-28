@@ -36,7 +36,7 @@ const CreateItem = () => {
           onChange={(e) => setItem(e.target.value)}
           placeholder="Create a new todo..."
           aria-label="newtask"
-          maxLength="50"
+          maxLength="25"
         />
       </div>
     </form>
