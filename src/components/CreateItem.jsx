@@ -19,7 +19,6 @@ const CreateItem = () => {
         id: id,
         content: item,
         completed: false,
-        orderId: 1,
       };
       setItems([...items, newItem]);
       setItem("");
