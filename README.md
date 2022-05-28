@@ -41,7 +41,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-/](hthttps://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-/)
+- Live Site URL: [https://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-](hthttps://valleyman89.github.io/FrontEndMentor-Solution---to-do-app-)
 
 ## My process
 
@@ -52,7 +52,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [react-gh-pages] (https://github.com/gitname/react-gh-pages) - for deployment onGitHub Pages
+- [react-gh-pages](https://github.com/gitname/react-gh-pages) - for deployment onGitHub Pages
 
 ### Notes
 
