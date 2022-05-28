@@ -6,7 +6,7 @@ import Items from "./components/Items";
 import React, { useState } from "react";
 
 function App() {
-  const { items, setItems } = useItemContext();
+  const { items } = useItemContext();
   const [filter, setFilter] = useState("");
 
   return (

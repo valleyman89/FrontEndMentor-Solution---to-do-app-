@@ -4,7 +4,6 @@ import { useItemContext } from "../ItemsContext";
 
 const Items = (props) => {
   const { setItems, items } = useItemContext();
-
   const { filter } = props;
 
   const onClearComplete = () => {
@@ -18,10 +17,8 @@ const Items = (props) => {
           switch (filter) {
             case "active":
               return !item.completed;
-              break;
             case "completed":
               return item.completed;
-              break;
             default:
               return item;
           }
@@ -44,8 +41,8 @@ const Items = (props) => {
           {items.filter((item) => {
             return !item.completed;
           }).length === 1
-            ? ""
-            : "s"}{" "}
+            ? " "
+            : "s "}
           left
         </div>
         <div className="end-clear">

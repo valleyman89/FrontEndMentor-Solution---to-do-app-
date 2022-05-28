@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ReactComponent as DarkTheme } from "../svg/icon-moon.svg";
+import React from "react";
+// import { ReactComponent as DarkTheme } from "../svg/icon-moon.svg";
 import { ReactComponent as LightTheme } from "../svg/icon-sun.svg";
 
 const Header = () => {
